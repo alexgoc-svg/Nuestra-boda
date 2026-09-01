@@ -1,0 +1,172 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 550px;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: transparent;
+  border: none;
+  color: var(--color-charcoal);
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+}
+
+.modal-close-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--color-dark);
+}
+
+.modal-title {
+  font-size: 2.2rem;
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.gift-section {
+  margin-bottom: 1.8rem;
+}
+
+.gift-section-title {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.bank-info-box {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-sand);
+  border-radius: 10px;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bank-info-box p {
+  margin: 0;
+}
+
+.bank-info-box code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: var(--color-dark);
+}
+
+.copy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.2rem;
+}
+
+.btn-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--color-champagne);
+  color: var(--color-dark);
+  border: 1px solid var(--color-gold-muted);
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-copy:hover {
+  background: var(--color-gold);
+  color: #fff;
+}
+
+.registries-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.registry-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-off-white);
+  border: 1px solid var(--color-sand);
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--color-dark);
+  transition: var(--transition-smooth);
+}
+
+.registry-link:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+.registry-store {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-gold-muted);
+}
+
+.registry-number {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 500px) {
+  .registries-grid {
+    grid-template-columns: 1fr;
+  }
+}

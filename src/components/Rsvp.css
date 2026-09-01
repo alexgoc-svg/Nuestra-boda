@@ -1,0 +1,191 @@
+.rsvp-section {
+  background-color: #ffffff;
+  padding-bottom: 6rem;
+}
+
+.rsvp-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.info-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background-color: var(--color-off-white);
+  border-radius: 12px;
+  border: 1px solid var(--color-sand);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-icon {
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.info-title {
+  font-size: 1.6rem;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.info-desc {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.info-subdesc {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-dark);
+  border: 1px solid var(--color-gold);
+  padding: 0.65rem 1.4rem;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gold);
+  color: #fff;
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+}
+
+.rsvp-action {
+  text-align: center;
+  margin-bottom: 5rem;
+  padding: 3.5rem 2.5rem;
+  background-color: var(--color-champagne);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.rsvp-title {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+}
+
+.rsvp-text {
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+}
+
+/* Form Styling */
+.rsvp-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.form-input,
+.form-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-sand);
+  border-radius: 6px;
+  background: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-dark);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.whatsapp-btn {
+  background-color: #25D366; /* WhatsApp Official Green */
+  color: #fff;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.closing-message {
+  text-align: center;
+}
+
+.closing-message p {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: var(--color-charcoal);
+  opacity: 0.9;
+}
+
+.closing-message h3 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-gold);
+}

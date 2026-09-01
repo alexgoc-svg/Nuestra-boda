@@ -1,0 +1,12 @@
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: var(--color-off-white);
+}
+
+/* Global focus and accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}

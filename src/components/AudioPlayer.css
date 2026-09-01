@@ -1,0 +1,105 @@
+.audio-player-container {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+}
+
+.audio-btn {
+  background: rgba(26, 26, 26, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--color-gold);
+  border-radius: 50px;
+  padding: 0.5rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.audio-btn:hover {
+  background: rgba(26, 26, 26, 0.95);
+  border-color: var(--color-gold);
+  transform: scale(1.05);
+}
+
+.audio-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 20px;
+}
+
+.audio-icon {
+  color: var(--color-gold);
+}
+
+.audio-icon.muted {
+  color: #ccc;
+}
+
+.play-hint-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-left: 2px;
+}
+
+.audio-btn.playing {
+  border-color: var(--color-gold);
+}
+
+/* Sound wave animation bars */
+.sound-wave-bar {
+  display: inline-block;
+  width: 2.5px;
+  background-color: var(--color-gold);
+  border-radius: 2px;
+  animation: soundBars 1.2s ease-in-out infinite alternate;
+}
+
+.bar-1 {
+  height: 8px;
+  animation-delay: 0.1s;
+}
+
+.bar-2 {
+  height: 16px;
+  animation-delay: 0.3s;
+}
+
+.bar-3 {
+  height: 10px;
+  animation-delay: 0.5s;
+}
+
+@keyframes soundBars {
+  0% {
+    height: 4px;
+  }
+  100% {
+    height: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .audio-player-container {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .audio-btn {
+    padding: 0.4rem 0.7rem;
+  }
+
+  .play-hint-tag {
+    display: none;
+  }
+}
