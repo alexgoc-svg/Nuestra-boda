@@ -6,11 +6,13 @@ import Location from './components/Location';
 import Gallery from './components/Gallery';
 import Rsvp from './components/Rsvp';
 import AudioPlayer from './components/AudioPlayer';
+import MagicParticles from './components/MagicParticles';
 import './App.css';
 
 function App() {
   return (
     <div className="app-container">
+      <MagicParticles />
       <AudioPlayer />
       <Hero />
       <SaveTheDate />

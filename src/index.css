@@ -1,21 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Paleta de colores de lujo */
-  --color-off-white: #FAF9F6;
-  --color-sand: #E6DFD3;
-  --color-champagne: #F0E6D2;
-  --color-gold: #D4AF37;
-  --color-gold-muted: #B89C49;
-  --color-charcoal: #333333;
-  --color-dark: #1A1A1A;
+  /* Paleta Mágica Astral - El Castillo Vagabundo */
+  --color-bg-deep: #0B0E17;
+  --color-bg-night: #101728;
+  --color-bg-card: rgba(16, 23, 40, 0.7);
+  --color-card-border: rgba(245, 208, 97, 0.3);
+  --color-card-glow: rgba(245, 208, 97, 0.15);
+
+  --color-gold-bright: #FFE58F;
+  --color-gold: #F5D061;
+  --color-gold-muted: #D4AF37;
+  --color-gold-dark: #8B6214;
+  
+  --color-star-cyan: #A5F3FC;
+  --color-star-indigo: #C7D2FE;
+  
+  --color-text-main: #F1F5F9;
+  --color-text-muted: #CBD5E1;
+  --color-dark: #07090E;
   
   /* Tipografía */
+  --font-magic: 'Cinzel Decorative', cursive, serif;
+  --font-cinzel: 'Cinzel', serif;
   --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Montserrat', sans-serif;
   
-  /* Transiciones */
+  /* Transiciones y Sombras */
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 208, 97, 0.15);
+  --gold-glow: 0 0 15px rgba(245, 208, 97, 0.4);
 }
 
 * {
@@ -28,54 +42,62 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: transparent;
-  color: var(--color-charcoal);
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-main);
   overflow-x: hidden;
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  font-weight: 500;
+  font-family: var(--font-cinzel);
+  font-weight: 600;
   line-height: 1.2;
+  letter-spacing: 1px;
 }
 
 /* Tipografía Utility */
-.text-gold { color: var(--color-gold); }
-.text-center { text-align: center; }
+.text-gold { 
+  color: var(--color-gold); 
+  text-shadow: var(--gold-glow);
+}
 
-/* Botones base */
+.text-center { 
+  text-align: center; 
+}
+
+/* Botones Mágicos */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-gold);
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
+  background: linear-gradient(135deg, #F5D061 0%, #D4AF37 50%, #8B6214 100%);
+  color: #07090E;
+  padding: 0.85rem 1.8rem;
+  border-radius: 50px;
   text-decoration: none;
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-family: var(--font-cinzel);
+  font-weight: 700;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border: none;
+  letter-spacing: 1.5px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
+  box-shadow: 0 4px 20px rgba(245, 208, 97, 0.35);
   transition: var(--transition-smooth);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-gold-muted);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(245, 208, 97, 0.6);
+  background: linear-gradient(135deg, #FFE58F 0%, #F5D061 50%, #B89C49 100%);
 }
 
-/* Secciones Base */
+/* Secciones Base con efecto de profundidad */
 .section {
-  padding: 5rem 1.5rem;
+  padding: 6rem 1.5rem;
   position: relative;
-  margin-bottom: 2rem;
+  z-index: 1;
 }
 
 .container {
@@ -84,17 +106,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-family: var(--font-magic);
+  font-size: 2.8rem;
+  margin-bottom: 3.5rem;
   text-align: center;
-  color: var(--color-dark);
+  color: var(--color-gold-bright);
+  text-shadow: 0 0 20px rgba(245, 208, 97, 0.5);
+  letter-spacing: 2px;
 }
 
 .section-title::after {
-  content: '';
+  content: '✦ ✧ ✦';
   display: block;
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-gold);
-  margin: 1rem auto 0;
+  font-size: 1rem;
+  color: var(--color-gold);
+  margin: 0.8rem auto 0;
+  letter-spacing: 6px;
+  opacity: 0.8;
+}
+
+/* Glassmorphism base helper */
+.glass-panel {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
 }

@@ -1,9 +1,9 @@
-.modal-backdrop {
+.gift-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(7, 9, 14, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,16 +11,18 @@
   padding: 1.5rem;
 }
 
-.modal-card {
-  background: #ffffff;
-  border-radius: 16px;
-  max-width: 550px;
+.gift-modal-container {
+  background: rgba(16, 23, 40, 0.95);
+  border: 1px solid var(--color-gold);
+  border-radius: 20px;
   width: 100%;
-  padding: 2.5rem 2rem;
-  position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 580px;
   max-height: 90vh;
   overflow-y: auto;
+  padding: 2.8rem 2.2rem;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(245, 208, 97, 0.25);
+  color: var(--color-text-main);
 }
 
 .modal-close-btn {
@@ -29,144 +31,181 @@
   right: 1.2rem;
   background: transparent;
   border: none;
-  color: var(--color-charcoal);
+  color: var(--color-text-muted);
   cursor: pointer;
-  padding: 0.2rem;
-  border-radius: 50%;
+  padding: 0.4rem;
   transition: var(--transition-smooth);
 }
 
 .modal-close-btn:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: var(--color-dark);
+  color: var(--color-gold-bright);
+  transform: rotate(90deg);
 }
 
-.modal-title {
-  font-size: 2.2rem;
-  color: var(--color-dark);
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.modal-subtitle {
-  font-size: 0.95rem;
-  color: var(--color-charcoal);
+.gift-modal-header {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.gift-modal-icon {
+  color: var(--color-gold);
+  margin-bottom: 0.8rem;
+  filter: drop-shadow(0 0 10px rgba(245, 208, 97, 0.6));
+}
+
+.gift-modal-title {
+  font-family: var(--font-magic);
+  font-size: 2rem;
+  color: var(--color-gold-bright);
+  margin-bottom: 0.6rem;
+}
+
+.gift-modal-note {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
   line-height: 1.5;
-  opacity: 0.85;
 }
 
-.gift-section {
-  margin-bottom: 1.8rem;
+.gift-block {
+  margin-bottom: 2rem;
+  background: rgba(11, 14, 23, 0.6);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-card-border);
 }
 
-.gift-section-title {
-  font-family: var(--font-sans);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--color-dark);
+.block-title {
+  font-family: var(--font-cinzel);
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
 }
 
-.bank-info-box {
-  background: var(--color-off-white);
-  border: 1px solid var(--color-sand);
-  border-radius: 10px;
-  padding: 1.2rem;
-  font-size: 0.9rem;
+.bank-info-card {
   display: flex;
   flex-direction: column;
+  gap: 0.8rem;
+}
+
+.bank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.95rem;
+}
+
+.bank-row .label {
+  color: var(--color-text-muted);
+}
+
+.bank-row .value {
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.clabe-row {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.clabe-value-container {
+  display: flex;
+  align-items: center;
   gap: 0.6rem;
 }
 
-.bank-info-box p {
-  margin: 0;
-}
-
-.bank-info-box code {
-  background: rgba(0, 0, 0, 0.06);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+.clabe-code {
   font-family: monospace;
-  font-size: 0.95rem;
-  color: var(--color-dark);
-}
-
-.copy-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  padding-top: 0.2rem;
+  font-size: 1.05rem;
+  background: rgba(245, 208, 97, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 208, 97, 0.3);
+  color: var(--color-gold-bright);
 }
 
 .btn-copy {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.3rem;
-  background: var(--color-champagne);
-  color: var(--color-dark);
-  border: 1px solid var(--color-gold-muted);
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
   padding: 0.3rem 0.7rem;
   border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-family: var(--font-cinzel);
   cursor: pointer;
   transition: var(--transition-smooth);
 }
 
 .btn-copy:hover {
   background: var(--color-gold);
-  color: #fff;
+  color: #07090E;
 }
 
-.registries-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+.btn-copy.copied {
+  background: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
 }
 
-.registry-link {
+/* Registries */
+.registries-list {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.registry-card {
+  display: flex;
   justify-content: space-between;
-  background: var(--color-off-white);
-  border: 1px solid var(--color-sand);
-  border-radius: 10px;
-  padding: 1rem;
-  text-decoration: none;
-  color: var(--color-dark);
+  align-items: center;
+  background: rgba(16, 23, 40, 0.8);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-card-border);
   transition: var(--transition-smooth);
 }
 
-.registry-link:hover {
+.registry-card:hover {
   border-color: var(--color-gold);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
 }
 
 .registry-store {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-family: var(--font-cinzel);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-gold-bright);
+}
+
+.registry-event {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.btn-store {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-cinzel);
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  text-decoration: none;
   font-weight: 600;
-  color: var(--color-gold-muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 208, 97, 0.4);
+  transition: var(--transition-smooth);
 }
 
-.registry-number {
-  display: block;
-  font-size: 0.75rem;
-  opacity: 0.7;
-  margin-top: 0.2rem;
-}
-
-@media (max-width: 500px) {
-  .registries-grid {
-    grid-template-columns: 1fr;
-  }
+.btn-store:hover {
+  background: var(--color-gold);
+  color: #07090E;
 }

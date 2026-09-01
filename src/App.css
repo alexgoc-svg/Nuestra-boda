@@ -2,7 +2,8 @@
   min-height: 100vh;
   width: 100%;
   position: relative;
-  background-color: var(--color-off-white);
+  background: radial-gradient(ellipse at 50% 0%, #151F38 0%, #0B0E17 50%, #07090E 100%);
+  color: var(--color-text-main);
 }
 
 /* Global focus and accessibility */

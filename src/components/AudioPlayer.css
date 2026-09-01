@@ -6,62 +6,67 @@
 }
 
 .audio-btn {
-  background: rgba(26, 26, 26, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(16, 23, 40, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 208, 97, 0.5);
   color: var(--color-gold);
   border-radius: 50px;
-  padding: 0.5rem 0.9rem;
+  padding: 0.55rem 1.1rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 12px rgba(245, 208, 97, 0.2);
   transition: var(--transition-smooth);
 }
 
 .audio-btn:hover {
-  background: rgba(26, 26, 26, 0.95);
+  background: rgba(22, 33, 62, 0.95);
   border-color: var(--color-gold);
+  box-shadow: 0 6px 25px rgba(245, 208, 97, 0.45);
   transform: scale(1.05);
 }
 
 .audio-icon-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   height: 20px;
 }
 
 .audio-icon {
   color: var(--color-gold);
+  filter: drop-shadow(0 0 4px rgba(245, 208, 97, 0.6));
 }
 
 .audio-icon.muted {
-  color: #ccc;
+  color: #94A3B8;
+  filter: none;
 }
 
 .play-hint-tag {
-  font-family: var(--font-sans);
+  font-family: var(--font-cinzel);
   font-size: 0.75rem;
-  color: #fff;
-  letter-spacing: 1px;
+  color: var(--color-text-main);
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   padding-left: 2px;
 }
 
 .audio-btn.playing {
-  border-color: var(--color-gold);
+  border-color: var(--color-gold-bright);
+  box-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
 }
 
 /* Sound wave animation bars */
 .sound-wave-bar {
   display: inline-block;
   width: 2.5px;
-  background-color: var(--color-gold);
+  background: linear-gradient(to top, var(--color-gold), var(--color-star-cyan));
   border-radius: 2px;
+  box-shadow: 0 0 6px var(--color-gold);
   animation: soundBars 1.2s ease-in-out infinite alternate;
 }
 
@@ -83,9 +88,11 @@
 @keyframes soundBars {
   0% {
     height: 4px;
+    filter: brightness(0.8);
   }
   100% {
     height: 18px;
+    filter: brightness(1.3);
   }
 }
 
@@ -96,7 +103,7 @@
   }
 
   .audio-btn {
-    padding: 0.4rem 0.7rem;
+    padding: 0.45rem 0.8rem;
   }
 
   .play-hint-tag {

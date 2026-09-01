@@ -17,40 +17,48 @@ const ScratchCircle = ({ label, value, index }) => {
     const ctx = canvas.getContext('2d');
     const size = canvas.offsetWidth || 140;
     
-    // Set actual canvas resolution for crisp retina display
+    // Crisp display
     const dpr = window.devicePixelRatio || 1;
     canvas.width = size * dpr;
     canvas.height = size * dpr;
     ctx.scale(dpr, dpr);
 
-    // Draw luxury gold foil metallic circle
+    // Luxury Astral Gold Foil Gradient
     const gradient = ctx.createRadialGradient(size / 2, size / 2, 5, size / 2, size / 2, size / 2);
-    gradient.addColorStop(0, '#F5E2AC');
-    gradient.addColorStop(0.4, '#D4AF37');
-    gradient.addColorStop(0.8, '#AA771C');
-    gradient.addColorStop(1, '#8B6214');
+    gradient.addColorStop(0, '#FFF3C4');
+    gradient.addColorStop(0.35, '#F5D061');
+    gradient.addColorStop(0.75, '#D4AF37');
+    gradient.addColorStop(1, '#684B0E');
 
     ctx.fillStyle = gradient;
     ctx.beginPath();
     ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
     ctx.fill();
 
-    // Subtle decorative ring on gold foil
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
-    ctx.lineWidth = 2;
+    // Astral Rune Rings
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.lineWidth = 1.5;
     ctx.beginPath();
-    ctx.arc(size / 2, size / 2, size / 2 - 8, 0, Math.PI * 2);
+    ctx.arc(size / 2, size / 2, size / 2 - 7, 0, Math.PI * 2);
     ctx.stroke();
 
-    // Text on foil
-    ctx.fillStyle = '#4A3508';
-    ctx.font = '600 13px Montserrat, sans-serif';
+    ctx.strokeStyle = 'rgba(104, 75, 14, 0.4)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.arc(size / 2, size / 2, size / 2 - 13, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Text on magical foil
+    ctx.fillStyle = '#3F2C04';
+    ctx.font = '700 11px Cinzel, serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('RASCA AQUÍ', size / 2, size / 2 - 6);
+    ctx.fillText('✦ RASCA AQUÍ ✦', size / 2, size / 2 - 7);
 
-    ctx.fillStyle = '#6E4E0B';
-    ctx.font = '500 10px Montserrat, sans-serif';
+    ctx.fillStyle = '#5A4109';
+    ctx.font = '600 11px Montserrat, sans-serif';
     ctx.fillText(label, size / 2, size / 2 + 12);
   }, [label]);
 
@@ -79,7 +87,6 @@ const ScratchCircle = ({ label, value, index }) => {
     scratchedPixelsCount.current += 1;
     if (!isScratched) setIsScratched(true);
 
-    // After certain amount of scratching, reveal completely
     if (scratchedPixelsCount.current > 24 && !isRevealed) {
       revealFull();
     }
@@ -128,22 +135,22 @@ const ScratchCircle = ({ label, value, index }) => {
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.15 }}
+      transition={{ duration: 0.6, delay: index * 0.15 }}
       ref={containerRef}
     >
       <div className={`scratch-circle-inner ${isRevealed ? 'revealed' : ''}`}>
-        {/* Revealed Content Behind */}
+        {/* Revealed Content Behind: Astral Night Nebula */}
         <div className="scratch-revealed-content">
           <span className="scratch-label">{label}</span>
           <span className="scratch-value">{value}</span>
           {isRevealed && (
             <motion.div 
               className="sparkle-badge"
-              initial={{ scale: 0, rotate: -30 }}
+              initial={{ scale: 0, rotate: -45 }}
               animate={{ scale: 1, rotate: 0 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 12 }}
             >
-              <Sparkles size={14} className="text-gold" />
+              <Sparkles size={16} className="text-gold" />
             </motion.div>
           )}
         </div>
@@ -161,7 +168,7 @@ const ScratchCircle = ({ label, value, index }) => {
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
-              exit={{ opacity: 0, scale: 1.05 }}
+              exit={{ opacity: 0, scale: 1.1, filter: 'blur(8px)' }}
               transition={{ duration: 0.4 }}
               title="Rasca con el mouse o dedo para revelar"
             />
@@ -175,7 +182,7 @@ const ScratchCircle = ({ label, value, index }) => {
           onClick={revealFull}
           title="Toca para descubrir"
         >
-          {isScratched ? "Descubrir" : "Rasca o toca"}
+          {isScratched ? "✦ Descubrir" : "✦ Rasca o toca"}
         </button>
       )}
     </motion.div>
