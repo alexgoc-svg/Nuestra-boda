@@ -1,37 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Download } from 'lucide-react';
 import { weddingData } from '../config/weddingData';
 import { getGoogleCalendarUrl, downloadIcsFile } from '../utils/calendar';
+import ScratchCircle from './ScratchCircle';
 import './SaveTheDate.css';
-
-const FlipCard = ({ label, value }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  return (
-    <div className="flip-card-container" onClick={() => setIsFlipped(!isFlipped)}>
-      <motion.div
-        className="flip-card-inner"
-        initial={false}
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6 }}
-        style={{ transformStyle: "preserve-3d" }}
-      >
-        <div className="flip-card-front">
-          <span>{label}</span>
-          <p className="tap-hint">Toca para revelar</p>
-        </div>
-        <div className="flip-card-back">
-          <span>{value}</span>
-        </div>
-      </motion.div>
-    </div>
-  );
-};
 
 const SaveTheDate = () => {
   const { day, month, year, fullDateText } = weddingData.date;
   const googleCalendarUrl = getGoogleCalendarUrl(weddingData.calendar);
+
+  const scratchItems = [
+    { label: "DÍA", value: day },
+    { label: "MES", value: month },
+    { label: "AÑO", value: year }
+  ];
 
   return (
     <section className="section save-date-section">
@@ -47,10 +30,15 @@ const SaveTheDate = () => {
           <p className="save-date-full">{fullDateText}</p>
         </motion.div>
         
-        <div className="cards-wrapper">
-          <FlipCard label="DÍA" value={day} />
-          <FlipCard label="MES" value={month} />
-          <FlipCard label="AÑO" value={year} />
+        <div className="scratch-circles-container">
+          {scratchItems.map((item, index) => (
+            <ScratchCircle 
+              key={item.label}
+              label={item.label}
+              value={item.value}
+              index={index}
+            />
+          ))}
         </div>
 
         <motion.div 
