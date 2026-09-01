@@ -7,6 +7,12 @@ export const weddingData = {
     quote: '"El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."',
     closingMessage: '"Esperamos contar con tu presencia en este día tan especial para nosotros."'
   },
+  hero: {
+    // Puedes colocar una URL pública (https://...) o un archivo local en la carpeta public/ (ej: "/mi-video.mp4")
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-having-their-first-dance-41484-large.mp4",
+    // Imagen de portada elegante que se muestra mientras carga el video o si el navegador bloquea autoplay
+    posterUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80"
+  },
   date: {
     iso: "2027-12-15T18:00:00",
     day: "15",
@@ -91,7 +97,7 @@ export const weddingData = {
     ]
   },
   rsvp: {
-    phoneNumber: "5215512345678", // Formato internacional sin símbolos
+    phoneNumber: "5215512345678",
     defaultMessage: "¡Hola! Quiero confirmar mi asistencia a la boda de María y Juan.",
     deadline: "1 de Noviembre de 2027"
   },

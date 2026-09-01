@@ -6,20 +6,22 @@ import './Hero.css';
 
 const Hero = () => {
   const { names, subtitle, quote } = weddingData.couple;
+  const { videoUrl, posterUrl } = weddingData.hero;
 
   return (
     <section className="hero-section">
       <div className="hero-video-wrapper">
         <video 
+          key={videoUrl}
           className="hero-video"
           autoPlay 
           loop 
           muted 
           playsInline
-          poster="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80"
+          poster={posterUrl}
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-having-their-first-dance-41484-large.mp4" type="video/mp4" />
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
+          Tu navegador no soporta video HTML5.
         </video>
         <div className="hero-overlay"></div>
       </div>
