@@ -1,26 +1,26 @@
 export const weddingData = {
   couple: {
-    bride: "María",
-    groom: "Juan",
-    names: "María & Juan",
+    bride: "Lucía",
+    groom: "Humberto",
+    names: "Lucía y Humberto",
     subtitle: "Nuestra Boda",
     quote: '"El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."',
     closingMessage: '"Esperamos contar con tu presencia en este día tan especial para nosotros."'
   },
   hero: {
     // Puedes colocar una URL pública (https://...) o un archivo local en la carpeta public/ (ej: "/mi-video.mp4")
-    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-having-their-first-dance-41484-large.mp4",
+    videoUrl: "https://www.youtube.com/watch?v=JGgspE1qtRg",
     // Imagen de portada elegante que se muestra mientras carga el video o si el navegador bloquea autoplay
     posterUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80"
   },
   date: {
-    iso: "2027-12-15T18:00:00",
-    day: "15",
-    month: "DIC",
+    iso: "2027-05-22T18:00:00",
+    day: "22",
+    month: "MAY",
     year: "2027",
-    fullDateText: "15 de Diciembre de 2027",
+    fullDateText: "22 de Mayo de 2027",
     time: "18:00 hrs",
-    rsvpDeadline: "1 de Noviembre de 2027"
+    rsvpDeadline: "1 de Abril de 2027"
   },
   music: {
     url: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-113543.mp3",
