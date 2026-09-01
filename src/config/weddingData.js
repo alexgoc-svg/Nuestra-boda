@@ -8,8 +8,8 @@ export const weddingData = {
     closingMessage: '"Esperamos contar con tu presencia en este día tan especial para nosotros."'
   },
   hero: {
-    // Puedes colocar una URL pública (https://...) o un archivo local en la carpeta public/ (ej: "/mi-video.mp4")
-    videoUrl: "https://www.youtube.com/watch?v=JGgspE1qtRg",
+    // Archivo de video local ubicado en public/Howl.mp4
+    videoUrl: "/Howl.mp4",
     // Imagen de portada elegante que se muestra mientras carga el video o si el navegador bloquea autoplay
     posterUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80"
   },
@@ -23,9 +23,9 @@ export const weddingData = {
     rsvpDeadline: "1 de Abril de 2027"
   },
   music: {
-    url: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-113543.mp3",
-    title: "Romantic Acoustic Waltz",
-    artist: "Wedding Melodies"
+    url: "/castillo-vagabundo.mp3",
+    title: "El Castillo Vagabundo",
+    artist: "Tema Principal"
   },
   locations: [
     {
@@ -78,7 +78,7 @@ export const weddingData = {
     title: "Mesa de Regalos",
     note: "Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros, ponemos a tu disposición las siguientes opciones:",
     bankAccount: {
-      beneficiary: "María García & Juan Pérez",
+      beneficiary: "Lucía & Humberto",
       bank: "BBVA México",
       clabe: "012180015678901234",
       account: "1567890123"
@@ -91,21 +91,21 @@ export const weddingData = {
       },
       {
         store: "Amazon",
-        eventNumber: "Boda-Maria-y-Juan",
+        eventNumber: "Boda-Lucia-y-Humberto",
         url: "https://www.amazon.com.mx/baby-reg"
       }
     ]
   },
   rsvp: {
     phoneNumber: "5215512345678",
-    defaultMessage: "¡Hola! Quiero confirmar mi asistencia a la boda de María y Juan.",
-    deadline: "1 de Noviembre de 2027"
+    defaultMessage: "¡Hola! Quiero confirmar mi asistencia a la boda de Lucía y Humberto.",
+    deadline: "1 de Abril de 2027"
   },
   calendar: {
-    title: "Boda de María y Juan",
-    description: "Celebración del enlace matrimonial de María y Juan en Hacienda Los Arcángeles.",
+    title: "Boda de Lucía y Humberto",
+    description: "Celebración del enlace matrimonial de Lucía y Humberto en Hacienda Los Arcángeles.",
     location: "Hacienda Los Arcángeles, Carretera al norte km 15",
-    startDate: "20271215T180000",
-    endDate: "20271216T030000"
+    startDate: "20270522T180000",
+    endDate: "20270523T030000"
   }
 };
